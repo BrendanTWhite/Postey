@@ -5,18 +5,24 @@
   "version": "0.1",
 
   "description": "Allows user to share a page to Facebook by right-clicking.",
+  "homepage_url": "https://github.com/BrendanTWhite/Postey",
 
   "icons": {
-    "32": "icons/postey-32.png"
-    "48": "icons/postey-48.png"
+    "32": "icons/postey-32.png",
+    "48": "icons/postey-48.png",
     "96": "icons/postey-96.png"
   },
 
-  "content_scripts": [
-    {
-      "matches": ["*://*/*"],
-      "js": ["postey.js"]
-    }
+
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+
+  "permissions": [
+    "activeTab",
+    "contextMenus"
   ]
 
 }
