@@ -19,8 +19,9 @@ browser.contextMenus.onClicked.addListener((info, tab) => {
             JSON.stringify(text) + "," +
             JSON.stringify(html) + ");";
 
-        browser.tabs.executeScript({
-            code: "typeof copyToClipboard === 'function';",
+        browser.windows.create({
+            url: "http://www.thespia.com/" + "Hello"
+            //type: "popup",
         }).then((results) => {
             // The content script's last expression will be true if the function
             // has been defined. If this is not the case, then we need to run
