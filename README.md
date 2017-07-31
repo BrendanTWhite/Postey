@@ -1,4 +1,4 @@
-* Postey *
+# Postey #
 Adds a right-click option to post the curent page to Facebook.
 
 See (github.com/BrendanTWhite/Postey)[https://github.com/BrendanTWhite/Postey] for more.
