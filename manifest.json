@@ -1,19 +1,21 @@
 {
 
   "manifest_version": 2,
-  "name": "Borderify",
-  "version": "1.0",
+  "name": "Postey",
+  "version": "0.1",
 
-  "description": "Adds a red border to all webpages matching mozilla.org.",
+  "description": "Allows user to share a page to Facebook by right-clicking.",
 
   "icons": {
-    "48": "icons/border-48.png"
+    "32": "icons/postey-32.png"
+    "48": "icons/postey-48.png"
+    "96": "icons/postey-96.png"
   },
 
   "content_scripts": [
     {
-      "matches": ["*://*.mozilla.org/*"],
-      "js": ["borderify.js"]
+      "matches": ["*://*/*"],
+      "js": ["postey.js"]
     }
   ]
 
