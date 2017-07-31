@@ -4,14 +4,14 @@ browser.contextMenus.create({
 });
 browser.contextMenus.onClicked.addListener((info, tab) => {
     if (info.menuItemId === "postey-share-to-facebook") {
-        // Examples: text and HTML to be copied.
-        const text = "This is text: " + info.linkUrl;
-        // Always HTML-escape external input to avoid XSS.
-        const safeUrl = escapeHTML(info.linkUrl);
-        const html = `This is HTML: <a href="${safeUrl}">${safeUrl}</a>`;
 
+        // First, get the (encoded) URL for the current tab
+        var encodedURI = encodeURIComponent(tab.url);
+        //console.log("encodedURI: " + encodedURI);
+
+        // Then, create a popup to share this URL on Facebook
         browser.windows.create({
-            url: "http://www.thespia.com/" + "Hello"
+            url: "http://www.facebook.com/sharer.php?u=" + encodedURI
             //type: "popup",
         }).catch((error) => {
             // This could happen if the extension is not allowed to run code in
